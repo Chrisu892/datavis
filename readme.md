@@ -4,7 +4,7 @@ This project has been created with Python and Django. In order to run this websi
 
 ## Install Python ##
 
-1. Open terminal and type <code>python --version<code>, if on Mac <code>python3 --version</code>
+1. Open terminal and type <code>python --version</code>, if on Mac <code>python3 --version</code>
 2. If Python is installed, go to Pipenv installation instructions
 3. 
 
