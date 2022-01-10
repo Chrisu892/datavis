@@ -1,0 +1,51 @@
+{% extends 'datavis/template.html' %}
+{% load static %}
+{% block content %}
+
+<main class="main">
+  <section class="hero">
+    <div class="inner">
+      <h1 class="hero__title font-xxl">{{ page.title }}</h1>
+      <p class="hero__tagline font-lg">{{ page.tagline }}</p>
+    </div>
+  </section>
+
+  {% if graphs %}
+    <section class="section">
+      <div class="inner">
+        <div class="container space-between">
+          {% for graph in graphs %}
+            <article class="graph">
+              <div class="graph__header">
+                <h2 class="graph__title font-xl">{{ graph.title }}</h2>
+                <p class="graph__tagline font-lg">{{ graph.tagline }}</p>
+                <select class="select" data-name="graph_{{ forloop.counter }}">
+                  <option value="" hidden>Please select...</option>
+                </select>
+              </div>
+              <div class="graph__canvas" id="graph_{{ forloop.counter }}" data-graph="graph_{{ forloop.counter }}" data-type="{{ graph.type }}" data-source="{{ graph.document_file.file.url }}"></div>
+              <div class="graph__legend" id="graph_legend_{{ forloop.counter }}" data-legend="graph_{{ forloop.counter }}"></div>
+              <div class="container space-between graph__action">
+                <div class="graph__action-sharers">
+                  <a class="action" href="https://www.facebook.com/" title="Share on Facebook" target="_blank" rel="nofollow">
+                    {% include 'datavis/includes/facebook-f-brands.svg' %} Facebook
+                  </a>
+                  <a class="action" href="https://www.twitter.com/" title="Share on Twitter" target="_blank" rel="nofollow">
+                    {% include 'datavis/includes/twitter-brands.svg' %} Twitter
+                  </a>
+                </div>
+                <div class="graph__action-print">
+                  <a class="action" href="/datavis/" title="Print {{ graph.title }}" target="_blank" rel="nofollow">
+                    {% include 'datavis/includes/print-solid.svg' %} Print
+                  </a>
+                </div>
+              </div>
+            </article>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+  {% endif %}
+</main>
+
+{% endblock %}

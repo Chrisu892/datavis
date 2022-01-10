@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{{ page.title }}</title>
+    <meta name="author" content="Chris Prusakiewicz - www.chrisprusakiewicz.co.uk" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://use.typekit.net/ppv6pep.css" />
+    <link rel="stylesheet" href="{% static 'datavis/css/style.css' %}" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="inner">
+        <div class="container align-center">
+          <div class="logo font-med">
+            {% include 'datavis/includes/inc_eye-regular.html' %}
+            Data<span class="logo__color">Vis</span>
+          </div>
+          <nav class="nav">
+            <a class="button" href="/admin/datavis/" target="_blank" title="Manage this dashboard (opens in new tab)">Manage</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    {% block content %}
+    {% endblock %}
+
+    <footer class="footer">
+      <div class="inner">
+        <p class="footer__credit">This project has been created for CETM25 Data Visualisation by bh84nj in Django and AM Charts.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/radar.js"></script>
+    <script src="//cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+    <script src="{% static 'datavis/js/script.js' %}"></script>
+  </body>
+</html>
