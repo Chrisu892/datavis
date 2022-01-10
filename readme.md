@@ -27,6 +27,7 @@ This project has been created with Python and Django. In order to run this websi
 3. If errors occurred, please go to Django installation instructions.
 4. In your terminal window, look for a message "Starting development server at http://127.0.0.1:8000/".
 5. Copy and paste the link "http://..." into your web browser address bar and press enter.
+6. To access the admin area, go to http://127.0.0.1:8000/admin/.
 
 ## Install Django ##
 
